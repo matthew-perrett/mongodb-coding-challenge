@@ -56,7 +56,7 @@ public class FlattenJsonTest {
     }
 
     @Test
-    public void flatten_should_handle_flatten_nested_json_objects() {
+    public void flatten_should_flatten_nested_json_objects() {
         String input =
             """
             {
@@ -103,22 +103,22 @@ public class FlattenJsonTest {
     public void main_method_should_except_input_from_standard_in_and_format_correctly() {
         String input =
             """
-                {
-                    "a": 1,
-                    "b": true,
-                    "c": {
-                        "d": 3,
-                        "e": "test"
-                    }
-                }""";
+            {
+                "a": 1,
+                "b": true,
+                "c": {
+                    "d": 3,
+                    "e": "test"
+                }
+            }""";
         String output =
             """
-                {
-                    "a": 1,
-                    "b": true,
-                    "c.d": 3,
-                    "c.e": "test"
-                }""";
+            {
+                "a": 1,
+                "b": true,
+                "c.d": 3,
+                "c.e": "test"
+            }""";
 
         ByteArrayOutputStream systemOut = new ByteArrayOutputStream();
         System.setIn(new ByteArrayInputStream(input.getBytes()));

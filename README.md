@@ -22,3 +22,9 @@ Json can be flattered by piping JSON into the executable:
 ```
 cat src/test/resources/test.json | java -jar target/FlattenJson.jar
 ```
+
+## Tests
+Run the tests with 
+```
+mvn test
+```
